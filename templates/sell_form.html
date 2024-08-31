@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Register Sell</h2>
+
+<div class="container-fluid">
+<form  style="font-weight: 900;" method="post">
+    {% csrf_token %}
+    {{ sell_form.as_p }}
+    <button style="margin: 10px; border-radius: 5px; background-color: #ddd;" type="submit">Register Sell</button>
+</form>
+<ul class="list-group container-fluid">
+    {% for pro in sells %}
+    
+        <li class="list-group-item container-fluid"><strong>{{pro}} birr</strong></li>
+       
+
+    {% endfor %}
+</ul>
+</div>
+
+
+{% endblock %}

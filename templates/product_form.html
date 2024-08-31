@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Register Product</h2>
+<div class="container-fluid">
+    {{error_message}}
+    <form method="post">
+        {% csrf_token %}
+        {{ product_form.as_p }}
+        <button type="submit">Register Product</button>
+    </form>
+    <ul class="list-group">
+    {% for pro in products %}
+    
+        <li class="list-group-item"><strong>{{pro.name}}</strong>  ${{pro.price}}</li>
+       
+
+    {% endfor %}
+</ul>
+
+</div>
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">sells Table</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Product name</th>
+                            <th>Quantity</th>
+                            <th>Date sold</th>
+                           
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Qunatity</th>
+                            <th>Date_sold</th>
+                            
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        {% for item in sells %}
+                        <tr>
+                            <td>{{item.Product}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.date_sold}}</td>
+                            
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Products table</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                          
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        {% for item in products %}
+                        <tr>
+                            <td>{{item.name}}</td>
+                            <td>{{item.price}}</td>
+                           
+                           
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+   
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Expense Table</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>For</th>
+                            <th>Amount</th>
+                            
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>For</th>
+                            <th>Amount</th>
+                           
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        {% for item in expenses %}
+                        <tr>
+                            <td>{{item.name}}</td>
+                            <td>{{item.amount}}</td>
+                            
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
+<!-- /.container-fluid -->

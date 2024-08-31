@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Register Expense</h2>
+
+<form style="margin: 20px;" method="post">
+    {% csrf_token %}
+    {{ expense_form.as_p }}
+    <button type="submit">Register Expense</button>
+</form>
+<ul class="list-group container-fluid">
+    {% for pro in exps %}
+    
+        <li class="list-group-item container-fluid"><strong>{{pro.amount}} birr  for {{pro.name}}</strong></li>
+       
+
+    {% endfor %}
+</ul>
+{% endblock %}
